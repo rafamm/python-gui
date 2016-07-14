@@ -1,0 +1,18 @@
+## Importo las librerias de Tkinter.
+## Importo la funcion call de subprocess
+from Tkinter import *
+import subprocess
+## Defino la funcion que ejecuta el script del sistema
+def llamada():
+    subprocess.call('/datos/rafa/datos/programacion/python-lab/ventanas/ejecuta', shell=True)
+## Defino las Ventanas
+## importo todas las clases de Tk en "ventana"
+ventana = Tk()
+ventana.title("Ejecucion del comando ejecuta")
+etiqueta=Label(ventana,text="Simple ejemplo de ejecucion sobre ventanas")
+## la funcion pack coloca el objeto etiqueta en "ventana". Si quiero personalizar la colocacion
+## debo usar la funcion grid
+etiqueta.pack()
+boton=Button(ventana,text="Pulsa para ejecutar", command=llamada)
+boton.pack()
+ventana.mainloop()
